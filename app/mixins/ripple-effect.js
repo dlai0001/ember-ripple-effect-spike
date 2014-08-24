@@ -9,7 +9,7 @@ export default Ember.Mixin.create({
 //    rippleSvg.prop('cx', evt.offsetX);
 //    rippleSvg.prop('cy', evt.offsetY);
 
-    var svgImg = this.$("<svg><g id=\"two\"> <circle fill=\"orange\" " +
+    var svgImg = this.$("<svg><g id=\"two\"> <circle fill=\"rgba(255,255,255,0.3)\" " +
         "cx=\"" + evt.offsetX + "\" cy=\"" + evt.offsetY +  "\" r=\"20\"/> </g></svg>");
     svgImg.css("position", "absolute");
     svgImg.css("float", "left");
@@ -27,6 +27,10 @@ export default Ember.Mixin.create({
       duration: 400,
       step : function(val){
         c.attr("r", val);
+      },
+      complete:  function() {
+        console.log("removing");
+        svgImg.remove();
       }
     });
 
