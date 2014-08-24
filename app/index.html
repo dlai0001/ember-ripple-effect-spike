@@ -11,14 +11,18 @@
 
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/ember-ripple-effect-spike.css">
+
   </head>
   <body>
     <script>
       window.EmberRippleEffectSpikeENV = {{ENV}};
       window.EmberENV = window.EmberRippleEffectSpikeENV.EmberENV;
     </script>
+
     <script src="assets/vendor.js"></script>
     <script src="assets/ember-ripple-effect-spike.js"></script>
+
+
     <script>
       window.EmberRippleEffectSpike = require('ember-ripple-effect-spike/app')['default'].create(EmberRippleEffectSpikeENV.APP);
     </script>
